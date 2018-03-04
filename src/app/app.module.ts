@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
@@ -13,7 +14,8 @@ import { AutoGrowDirective } from './shared/directives/auto-grow.directive';
     AutoGrowDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]

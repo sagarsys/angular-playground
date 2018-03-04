@@ -7,8 +7,11 @@
       <li *ngFor="let product of products">{{ product }}</li>
     </ul>
   </ng-container>
-  <form>
+  <form #newProductForm (submit)="onFormSubmit($event)">
     <label for="add-product">Add a product: </label>
-    <input id="add-product" type="text" appInputAutoGrow />
+    <input id="add-product" type="text" appInputAutoGrow [(ngModel)]="newProduct" [ngModelOptions]="{ standalone: true }" />
+    <span *ngIf="newProduct.length">
+      <span>Title: </span>{{ newProduct }}
+    </span>
   </form>
 </div>
