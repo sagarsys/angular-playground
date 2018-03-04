@@ -7,4 +7,8 @@
       <li *ngFor="let product of products">{{ product }}</li>
     </ul>
   </ng-container>
+  <form>
+    <label for="add-product">Add a product: </label>
+    <input id="add-product" type="text" appInputAutoGrow />
+  </form>
 </div>
