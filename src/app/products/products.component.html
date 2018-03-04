@@ -1,0 +1,10 @@
+<div>
+  <h2>Products</h2>
+  <p *ngIf="products.length <= 0">No available products at this time!</p>
+  <ng-container  *ngIf="products.length > 0">
+    <p>This is a list of available products:</p>
+    <ul>
+      <li *ngFor="let product of products">{{ product }}</li>
+    </ul>
+  </ng-container>
+</div>
