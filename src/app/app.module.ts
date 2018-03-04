@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductsService } from './shared/services/products.service';
 import { AutoGrowDirective } from './shared/directives/auto-grow.directive';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    AutoGrowDirective
+    AutoGrowDirective,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,

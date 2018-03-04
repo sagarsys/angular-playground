@@ -1,17 +1,41 @@
 import { Injectable } from '@angular/core';
+import { ProductModel } from '../models/product.model';
 
 @Injectable()
 export class ProductsService {
 
-  private products: string[] = ['Product 1', 'Product 2', 'Product 3', 'Product 4'];
+  private products: ProductModel[] =
+    [
+      {
+        title: 'Product 1',
+        favorite: false
+      },
+      {
+        title: 'Product 2',
+        favorite: false
+      },
+      {
+        title: 'Product 3',
+        favorite: true
+      },
+      {
+        title: 'Product 4',
+        favorite: false
+      }
+    ];
   
-  constructor() { }
+  constructor() {}
 
-  get(): string[] {
+  get(): ProductModel[] {
     return this.products;
   }
   
-  add(product: string) {
+  set(products: ProductModel[]) {
+    this.products = products;
+    console.log(this.products);
+  }
+  
+  add(product: ProductModel) {
     this.products.push(product);
   }
   

@@ -4,14 +4,17 @@
   <ng-container  *ngIf="products.length > 0">
     <p>This is a list of available products:</p>
     <ul>
-      <li *ngFor="let product of products">{{ product }}</li>
+      <li *ngFor="let product of products; index as i">
+        {{ product.title }}
+        <app-favorite [isFavorite]="product.favorite" (onFavoriteClicked)="onFavoriteClick($event, i)"></app-favorite>
+      </li>
     </ul>
   </ng-container>
   <form #newProductForm (submit)="onFormSubmit($event)">
     <label for="add-product">Add a product: </label>
-    <input id="add-product" type="text" appInputAutoGrow [(ngModel)]="newProduct" [ngModelOptions]="{ standalone: true }" />
-    <span *ngIf="newProduct.length">
-      <span>Title: </span>{{ newProduct }}
+    <input id="add-product" type="text" appInputAutoGrow [(ngModel)]="productTitle" [ngModelOptions]="{ standalone: true }" />
+    <span *ngIf="productTitle">
+      <span>Title: </span>{{ productTitle }}
     </span>
   </form>
 </div>
